@@ -1,30 +1,32 @@
 Feature: login feature
 
-
-  Scenario: user should able to login with valid email and valid password
-    Given user should be on TalentTEK homepage
+  @regression @smoke @sanity
+  Scenario: User should be able to login with valid credentials
+    Given user is in TalentTEK Homepage
     And user enter valid email address
-    And user enter valid password
-    When user clicks on log in button
-    Then user should be able to successfully login
+    And User enters valid password
+    When user click on login button
+    Then user should be successfully able to login
 
-  Scenario: user should not able to login with valid email and invalid password
-    Given user should be on TalentTEK homepage
+  @smoke @hb
+  Scenario: User should not be able to login with invalid  password
+    Given user is in TalentTEK Homepage
     And user enter valid email address
-    And user enter invalid password
-    When user clicks on log in button
-    Then user should be able see "You have entered an incorrect email or student Id."
+    And User enters invalid password
+    When user click on login button
+    Then user should see "You have entered an incorrect email or student Id."
 
-  Scenario: : user should not able to login with invalid email and valid password
-    Given user should be on TalentTEK homepage
+  Scenario: User should not be able to login with invalid email
+    Given user is in TalentTEK Homepage
     And user enter invalid email address
-    And user enter valid password
-    When user clicks on log in button
-    Then user should be able see "You have entered an incorrect email or student Id."
+    And User enters valid password
+    When user click on login button
+    Then user should see "You have entered an incorrect email or student Id."
 
-  Scenario: : user should not able to login with invalid email and invalid password
-    Given user should be on TalentTEK homepage
+  Scenario: User should not be able to login with invalid email and password
+    Given user is in TalentTEK Homepage
     And user enter invalid email address
-    And user enter invalid password
-    When user clicks on log in button
-    Then user should be able see "You have entered an incorrect email or student Id."
+    And User enters invalid password
+    When user click on login button
+    Then user should see "You have entered an incorrect email or student Id."
+
